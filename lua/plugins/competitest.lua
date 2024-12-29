@@ -99,7 +99,7 @@ return {
 				c = { exec = "./$(FNOEXT)" },
 				cpp = { exec = "./$(FNOEXT)" },
 				rust = { exec = "./$(FNOEXT)" },
-				python = { exec = "python", args = { "$(FNAME)" } },
+				python = { exec = "python3", args = { "$(FNAME)" } },
 				java = { exec = "java", args = { "$(FNOEXT)" } },
 			},
 			multiple_testing = -1,
