@@ -2,7 +2,7 @@ return {
 	"williamboman/mason.nvim",
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig"
+		"neovim/nvim-lspconfig",
 	},
 	config = function()
 		require("mason").setup()
@@ -17,25 +17,25 @@ return {
 						globals = { 'vim' }
 					}
 				}
-			},
-			filetypes = {"lua"}
+			}
 		}
 
 		require("lspconfig").clangd.setup {
 			cmd = {
 				"clangd",
+				"--header-insertion=never",
 				-- "--background-index",
 				-- "--clang-tidy",
 				-- "--completion-style=detailed",
 				-- "--function-arg-placeholders",
 				-- "--fallback-style=llvm",
-				"--header-insertion=never",
 			},
-			filetypes = {"cpp"}
 		}
 
 		require("lspconfig").pyright.setup {
 			filetypes = {"python"}
 		}
+
+
 	end
 }
