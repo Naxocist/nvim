@@ -17,6 +17,7 @@ return {
 			},
 		},
 	},
+
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
@@ -32,6 +33,7 @@ return {
 			remap("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 		end
 	},
+
 	{
 		"nvim-tree/nvim-tree.lua",
 		dependencies = {
@@ -98,16 +100,16 @@ return {
 		}
 	},
 	{
-		"echasnovski/mini.ai",
-		init = function()
-			require("mini.ai").setup()
-		end
-	},
-	{
 		"ggandor/leap.nvim",
 		dependencies = "tpope/vim-repeat",
 		config = function()
 			require("leap").create_default_mappings()
+		end
+	},
+	{
+		"echasnovski/mini.ai",
+		init = function()
+			require("mini.ai").setup()
 		end
 	},
 	{
@@ -117,5 +119,4 @@ return {
 		-- use opts = {} for passing setup options
 		-- this is equivalent to setup({}) function
 	}
-
 }
