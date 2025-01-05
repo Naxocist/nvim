@@ -2,11 +2,7 @@ return {
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-		},
+		opts = {},
 		keys = {
 			{
 				"<leader>?",
@@ -48,11 +44,10 @@ return {
 				}
 			})
 
-			local remap = vim.keymap.set
-			remap("n", "t", "<cmd>NvimTreeToggle<cr>")
-
+			vim.keymap.set("n", "t", "<cmd>NvimTreeToggle<cr>")
 		end
 	},
+
 	{
 		"numToStr/Comment.nvim",
 		opts = {
@@ -99,6 +94,7 @@ return {
 			post_hook = nil,
 		}
 	},
+
 	{
 		"ggandor/leap.nvim",
 		dependencies = "tpope/vim-repeat",
@@ -106,17 +102,15 @@ return {
 			require("leap").create_default_mappings()
 		end
 	},
+
 	{
 		"echasnovski/mini.ai",
-		init = function()
-			require("mini.ai").setup()
-		end
+		opts = {}
 	},
+
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		config = true
-		-- use opts = {} for passing setup options
-		-- this is equivalent to setup({}) function
 	}
 }

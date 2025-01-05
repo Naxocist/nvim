@@ -24,18 +24,12 @@ return {
 			cmd = {
 				"clangd",
 				"--header-insertion=never",
-				-- "--background-index",
-				-- "--clang-tidy",
-				-- "--completion-style=detailed",
-				-- "--function-arg-placeholders",
-				-- "--fallback-style=llvm",
+				"--completion-style=detailed",
 			},
 		}
 
 		require("lspconfig").pyright.setup {
 			filetypes = {"python"}
 		}
-
-
 	end
 }
