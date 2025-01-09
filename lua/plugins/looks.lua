@@ -1,18 +1,15 @@
 return {
 	{
-		"rose-pine/neovim",
-		name = "rose-pine",
-		opts = {
-			variant = "main",
-			styles = {
-				bold = true,
-				italic = true,
-				transparency = false,
-			},
-		},
-		config = function(_, opts)
-			require("rose-pine").setup(opts)
-			vim.cmd("colorscheme rose-pine")
+		"polirritmico/monokai-nightasty.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			local opts = {
+				dark_style_background = "transparent",-- dark / transparent
+				-- dark_style_background = "dark",-- dark / transparent
+			}
+			require("monokai-nightasty").setup(opts) -- ...and then load the theme:
+			require("monokai-nightasty").load()
 		end
 	},
 
@@ -26,6 +23,17 @@ return {
 		"karb94/neoscroll.nvim",
 		opts = {
 			hide_cursor = false,
+			duration_multiplier = 0.5
 		},
+	},
+
+	{
+		"folke/noice.nvim",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			-- "rcarriga/nvim-notify",
+		},
+		event = "VeryLazy",
+		opts = {},
 	}
 }

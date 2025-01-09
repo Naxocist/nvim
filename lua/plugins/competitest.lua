@@ -119,14 +119,30 @@ return {
 		evaluate_template_modifiers = false,
 		date_format = "%c",
 		received_files_extension = "cpp",
-		received_problems_path = "$(HOME)/cp/$(JUDGE)/$(CONTEST)/$(PROBLEM).$(FEXT)",
+		received_problems_path = "$(HOME)/Desktop/cp/$(JUDGE)/$(CONTEST)/$(PROBLEM).$(FEXT)",
 		received_problems_prompt_path = true,
-		received_contests_directory = "$(HOME)/cp/$(JUDGE)/$(CONTEST)",
+		received_contests_directory = "$(HOME)/Desktop/cp/$(JUDGE)/$(CONTEST)",
 		received_contests_problems_path = "$(PROBLEM).$(FEXT)",
 		received_contests_prompt_directory = true,
 		received_contests_prompt_extension = true,
 		open_received_problems = true,
 		open_received_contests = true,
 		replace_received_testcases = false,
-	}
+	},
+	config = function(_, opts)
+		require("competitest").setup(opts)
+
+		local remap = vim.keymap.set
+		remap("n", "<leader>at", "<cmd>CompetiTest add_testcase<cr>")
+		remap("n", "<leader>et", "<cmd>CompetiTest edit_testcase<cr>")
+		remap("n", "<leader>dt", "<cmd>CompetiTest delete_testcase<cr>")
+
+		remap("n", "<leader>rj", "<cmd>CompetiTest run<cr>")
+		remap("n", "<leader>rk", "<cmd>CompetiTest run_no_compile<cr>")
+		remap("n", "<leader>ui", "<cmd>CompetiTest show_ui<cr>")
+
+		remap("n", "<leader>gp", "<cmd>CompetiTest receive problem<cr>")
+		remap("n", "<leader>gt", "<cmd>CompetiTest receive testcases<cr>")
+		remap("n", "<leader>gc", "<cmd>CompetiTest receive contest<cr>")
+	end
 }

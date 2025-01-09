@@ -42,7 +42,6 @@ require("lazy").setup({
 
   debug = false,
 
-
   -- automatically check for plugin updates
   checker = {
     enabled = true,
