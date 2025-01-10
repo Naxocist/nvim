@@ -1,15 +1,33 @@
 return {
 	{
-		"polirritmico/monokai-nightasty.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			local opts = {
-				-- dark_style_background = "transparent",-- dark / transparent
-				dark_style_background = "dark",-- dark / transparent
+		"olimorris/onedarkpro.nvim",
+		priority = 1000, -- Ensure it loads first
+		opts = {
+			colors = {},
+			styles = {
+				types = "NONE",
+				methods = "bold",
+				numbers = "NONE",
+				strings = "NONE",
+				comments = "italic",
+				keywords = "italic",
+				constants = "NONE",
+				functions = "bold",
+				operators = "NONE",
+				variables = "NONE",
+				parameters = "bold,italic",
+				conditionals = "italic",
+				virtual_text = "NONE",
+			},
+
+			options = {
+				transparency = true,
+				lualine_transparency = true
 			}
-			require("monokai-nightasty").setup(opts) -- ...and then load the theme:
-			require("monokai-nightasty").load()
+		},
+		config = function(_, opts)
+			require("onedarkpro").setup(opts)
+			vim.cmd "colorscheme onedark_vivid"
 		end
 	},
 
@@ -34,6 +52,9 @@ return {
 			"rcarriga/nvim-notify",
 		},
 		event = "VeryLazy",
-		opts = {},
+		opts = {
+			messages = { enabled = false },
+			cmdline = { enabled = true }
+		},
 	}
 }
