@@ -111,7 +111,7 @@ return {
 			vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
 			vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
 			vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
-			vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
+			vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files (\'.\' for repeat)' })
 			vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
 			-- Slightly advanced example of overriding default behavior and theme
@@ -140,9 +140,9 @@ return {
 	},
 
 	{
-		"nvim-tree/nvim-tree.lua",
+		'nvim-tree/nvim-tree.lua',
 		dependencies = {
-			"nvim-tree/nvim-web-devicons"
+			'nvim-tree/nvim-web-devicons'
 		},
 		opts = {
 			filters = {
@@ -156,13 +156,13 @@ return {
 			}
 		},
 		config = function(_, opts)
-			require("nvim-tree").setup(opts)
-			vim.keymap.set("n", "t", "<cmd>NvimTreeToggle<cr>")
+			require('nvim-tree').setup(opts)
+			vim.keymap.set('n', 't', '<cmd>NvimTreeToggle<cr>')
 		end
 	},
 
 	{
-		"numToStr/Comment.nvim",
+		'numToStr/Comment.nvim',
 		opts = {
 			---Add a space b/w comment and the line
 			padding = true,
@@ -173,28 +173,28 @@ return {
 			---LHS of toggle mappings in NORMAL mode
 			toggler = {
 				---Line-comment toggle keymap
-				line = "gcc",
+				line = 'gcc',
 				---Block-comment toggle keymap
-				block = "gbc",
+				block = 'gbc',
 			},
 			---LHS of operator-pending mappings in NORMAL and VISUAL mode
 			opleader = {
 				---Line-comment keymap
-				line = "gc",
+				line = 'gc',
 				---Block-comment keymap
-				block = "gb",
+				block = 'gb',
 			},
 			---LHS of extra mappings
 			extra = {
 				---Add comment on the line above
-				above = "gcO",
+				above = 'gcO',
 				---Add comment on the line below
-				below = "gco",
+				below = 'gco',
 				---Add comment at the end of line
-				eol = "gcA",
+				eol = 'gcA',
 			},
 			---Enable keybindings
-			---NOTE: If given `false` then the plugin won"t create any mappings
+			---NOTE: If given `false` then the plugin won't create any mappings
 			mappings = {
 				---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
 				basic = true,
@@ -222,16 +222,20 @@ return {
 	},
 
 	{
-		"ggandor/leap.nvim",
-		dependencies = "tpope/vim-repeat",
+		'ggandor/leap.nvim',
+		dependencies = 'tpope/vim-repeat',
 		config = function()
-			require("leap").create_default_mappings()
+			require('leap').create_default_mappings()
 		end
 	},
 
 	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
+		'windwp/nvim-autopairs',
+		event = 'InsertEnter',
 		config = true
+	},
+
+	{
+		'tpope/vim-fugitive'
 	}
 }

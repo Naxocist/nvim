@@ -1,8 +1,8 @@
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
 -- This is also a good place to setup other settings (opt)
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -18,6 +18,7 @@ opt.relativenumber = true
 
 opt.shiftwidth = 2
 opt.tabstop = 2
+opt.softtabstop = 2
 
 opt.ignorecase = true
 opt.smartcase = true
@@ -49,10 +50,8 @@ opt.splitright = true
 opt.splitbelow = true
 
 -- Sets how neovim will display certain whitespace characters in the editor.
-opt.list = true
-vim.o.listchars = 'trail:-,nbsp:+,tab:▏ ,'
-vim.o.list = true
+-- opt.list = true
+-- vim.o.listchars = 'trail:_,nbsp:+'
 
 -- Preview substitutions live while typing
 opt.inccommand = 'split'
-
