@@ -5,8 +5,8 @@ return {
 		priority = 1000,
 		config = function()
 			local opts = {
-				dark_style_background = "transparent",-- dark / transparent
-				-- dark_style_background = "dark",-- dark / transparent
+				-- dark_style_background = "transparent",-- dark / transparent
+				dark_style_background = "dark",-- dark / transparent
 			}
 			require("monokai-nightasty").setup(opts) -- ...and then load the theme:
 			require("monokai-nightasty").load()
@@ -31,7 +31,7 @@ return {
 		"folke/noice.nvim",
 		dependencies = {
 			"MunifTanjim/nui.nvim",
-			-- "rcarriga/nvim-notify",
+			"rcarriga/nvim-notify",
 		},
 		event = "VeryLazy",
 		opts = {},
