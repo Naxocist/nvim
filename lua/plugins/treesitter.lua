@@ -5,8 +5,8 @@ Plugin.main = 'nvim-treesitter.configs'
 Plugin.build = ':TSUpdate'
 
 Plugin.dependencies = {
-	'nvim-treesitter/nvim-treesitter-textobjects',
-	'nvim-treesitter/playground'
+  'nvim-treesitter/nvim-treesitter-textobjects',
+  'nvim-treesitter/playground'
 }
 
 -- See :help nvim-treesitter-modules
@@ -32,10 +32,10 @@ Plugin.opts = {
   ensure_installed = {
     'vim',
     'vimdoc',
-		'lua',
-		'python',
-		'cpp',
-		'c'
+    'lua',
+    'python',
+    'cpp',
+    'c'
   },
 }
 
