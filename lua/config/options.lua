@@ -1,56 +1,45 @@
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (opt)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
 vim.g.have_nerd_font = true
 
-local opt = vim.opt
-opt.termguicolors = true
-opt.cursorline = true
+vim.opt.title = true
 
-opt.nu = true
-opt.relativenumber = true
+vim.opt.termguicolors = true
+vim.opt.cursorline = true
 
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.softtabstop = 2
-opt.expandtab = true
+vim.opt.nu = true
+vim.opt.rnu = true
 
-opt.ignorecase = true
-opt.smartcase = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+vim.opt.autoindent = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.breakindent = true
 
-opt.scrolloff = 10
-opt.signcolumn = 'yes'
+vim.opt.wrap = false
+vim.opt.backspace = {"start", "eol", "indent"}
 
-opt.mouse = 'a'
+vim.opt.scrolloff = 10
+vim.opt.signcolumn = 'yes'
 
--- mode is already on the lualine
-opt.showmode = false
+vim.opt.showmode = false
 
--- decrease update time
-opt.updatetime = 250
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
 
--- Enable break indent
-opt.breakindent = true
+vim.opt.undofile = true
 
--- Save undo history
-opt.undofile = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
--- Decrease mapped sequence wait time
-opt.timeoutlen = 300
+vim.opt.inccommand = 'split'
+vim.opt.incsearch = true
 
--- Configure how new splits should be opened
-opt.splitright = true
-opt.splitbelow = true
-
--- Preview substitutions live while typing
-opt.inccommand = 'split'
-
-opt.incsearch = true
-
--- opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"

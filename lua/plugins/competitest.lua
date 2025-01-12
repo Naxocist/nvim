@@ -5,7 +5,7 @@ Plugin.dependencies = 'MunifTanjim/nui.nvim'
 Plugin.opts = {
 	local_config_file_name = ".competitest.lua",
 
-	floating_border = "rounded",
+	floating_border = "single",
 	floating_border_highlight = "FloatBorder",
 	picker_ui = {
 		width = 0.2,
