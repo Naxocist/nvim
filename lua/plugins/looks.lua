@@ -1,20 +1,5 @@
 return {
   {
-    "navarasu/onedark.nvim",
-    opts = {
-      style = "warm",
-      transparent = true,
-      lualine = {
-        transparent = true, -- lualine center bar transparency
-      },
-      code_style = {
-        comments = "none",
-        functions = "bold",
-      },
-    },
-  },
-
-  {
     "folke/tokyonight.nvim",
     opts = {
       transparent = true,
@@ -26,14 +11,14 @@ return {
   },
 
   {
-    "LazyVim/LazyVim",
+    "folke/snacks.nvim",
     opts = {
-      -- colorscheme = "onedark",
+      scroll = {
+        animate = {
+          duration = { step = 15, total = 150 },
+          easing = "linear",
+        },
+      },
     },
-  },
-
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
   },
 }
