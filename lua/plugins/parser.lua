@@ -1,3 +1,4 @@
+local HOME = os.getenv("HOME")
 -- In your plugin files, you can:
 -- * add extra plugins
 -- * disable/enabled LazyVim plugins
@@ -63,6 +64,18 @@ return {
         "shellcheck",
         "shfmt",
         "flake8",
+      },
+    },
+  },
+
+  {
+    "mfussenegger/nvim-lint",
+    optional = true,
+    opts = {
+      linters = {
+        ["markdownlint-cli2"] = {
+          args = { "--config", HOME .. "/Desktop/.markdownlint-cli2.yaml", "--" },
+        },
       },
     },
   },
